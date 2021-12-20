@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import UserApp from './features/UserApp';
+import Header from './features/Header';
+import Weather from './features/Weather';
+import Footer from './features/Footer';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Header />
+    <Weather />
     <UserApp />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );
