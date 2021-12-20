@@ -8,5 +8,5 @@ workers_dev = true
 site = {bucket = "./build",entry-point = "workers-site"}
 compatibility_date = "2021-12-16"
 kv_namespaces = [
-  {binding = "BRITTER", id="09074d600ba54b5f9bfb4dc7e6144d51", preview_id="36d6cbabc66f455184c418df2eeae98d"}
+  {binding = "BRITTER", id="dac7bb6764a84a6ca145f2c6f5b398bf", preview_id="36d6cbabc66f455184c418df2eeae98d"}
 ]
