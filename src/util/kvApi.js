@@ -22,6 +22,6 @@ export const postPosts = async (postObject) => {
   if(!response.ok) {
     throw new Error(`An Error has occured: ${response.status}`);
   } else {
-    return 'Post Successful!'
+    return 'Post Successful'
   }
 }

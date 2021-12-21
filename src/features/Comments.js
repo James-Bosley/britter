@@ -27,6 +27,7 @@ function Comments(props) {
       alert(response);
       if (response === 'Post Successful') {
         setNewComment('');
+        await props.updatePosts();
       }
     } else {
       alert(`Please complete all fields`);
@@ -58,8 +59,8 @@ function Comments(props) {
       <div className='commentForm'>
         <p>Leave a comment</p>
         <form onSubmit={handleSubmit}>
-          <label>Your Name: <input type='text' value={user} onChange={handleUserChange} placeholder='Joe Bloggs'></input></label>
-          <label>Comment: <input type='text' value={newComment} onChange={handleCommentChange} placeholder='Still got my umbrella!'></input></label>
+          <label>User: <input id='comment1' type='text' value={user} onChange={handleUserChange} placeholder='Joe Bloggs'></input></label>
+          <label>Comment: <input id='comment2' type='text' value={newComment} onChange={handleCommentChange} placeholder='Still got my umbrella!'></input></label>
           <button type='submit'>Post Comment</button>
         </form>
       </div>

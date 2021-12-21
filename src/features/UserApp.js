@@ -10,7 +10,7 @@ function App() {
   const [title, setTitle] = useState('');
   const [newPost, setNewPost] = useState('');
   // Creates App generated states. Initialises to an empty array.
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([{id: 1, userName: 'user', title: 'title', textContent: 'newPost', time: 1, likes: 14, comments: [{id:2, userName: 'user', textContent: 'newComment', time: 1}]}]);
 
   // Loads existing posts on first render so UI is not blocked.
   useEffect(() => {
@@ -33,7 +33,9 @@ function App() {
       if (response === 'Post Successful') {
         setTitle('');
         setNewPost('');
-        setPosts(await fetchPosts());
+        setTimeout(async() => {
+          setPosts(await fetchPosts());
+        }, 1000);
       }
     } else {
       alert(`Please complete all fields`);
