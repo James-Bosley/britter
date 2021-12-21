@@ -27,7 +27,7 @@ function App() {
   const handleSubmit = async (e) => {
     if (user && title && newPost) {
       e.preventDefault();
-      const postObject = {id: uuidv4(), userName: user, title: title, textContent: newPost, time: Date.now(), comments: []};
+      const postObject = {id: uuidv4(), userName: user, title: title, textContent: newPost, time: Date.now(), likes: 0, comments: []};
       const response = await postPosts(postObject);
       alert(response);
       if (response === 'Post Successful') {
@@ -59,9 +59,9 @@ function App() {
               {posts.map(x => {
                 return <div className='post' key={x.id}>
                   <h5>{x.userName} wants to talk about {x.title}</h5>
-                  <p>-{'>'} {x.textContent}</p><hr/>
+                  <p>-{'>'} {x.textContent}</p>
                   {/* Post is sent via props to comment component */}
-                  <Comments post={x}/> 
+                  <Comments post={x} updatePosts={updatePosts}/> 
                 </div>
               })}
         </div>}

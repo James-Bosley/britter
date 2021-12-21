@@ -33,9 +33,17 @@ function Comments(props) {
     }
   }
 
+  // Pushes likes to KV store. Rerenders post.
+  const incrementLikes = async () => {
+    props.post.likes++;
+    await postPosts(props.post);
+    await props.updatePosts();
+  }
+
   // Renders comments.
   return (
     <div className='commentContainer'>
+      <button id='likeButton' onClick={incrementLikes}>&#128077; {props.post.likes} Likes</button><hr/>
       {comments.length === 0 ? <p>No comments to display</p> : 
       <div className='commentFeed' key={comments.id}>
         {!viewComments ? <p>{comments.length} comment{comments.length > 1 ? 's' : null}</p> : null}

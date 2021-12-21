@@ -151,7 +151,7 @@ textarea, input {
   width: 75%;
   margin: 10px auto;
   padding: 10px;
-  background-color: rgb(0, 0 , 102, 0.8);
+  background-color: rgba(0, 0, 102, 0.8);
   border-radius: 30px;
   color: white;
 } 
@@ -191,6 +191,12 @@ hr {
 
 .commentForm label {
   margin-right: 10px;
+}
+
+#likeButton {
+  font-size: 16px;
+  padding-right: 10px;
+  margin-bottom: 10px;
 }
 
 /* Footer styles */
