@@ -11,7 +11,7 @@ const fetchWeather = async (loc) => {
     tempMax: Number.parseFloat(jsonResponse.main.temp_max-273.15).toFixed(1),
     wind: Number.parseFloat(jsonResponse.wind.speed).toFixed(1),
     weather: jsonResponse.weather[0].main,
-    icon: `http://openweathermap.org/img/wn/${jsonResponse.weather[0].icon}@2x.png`
+    icon: `https://openweathermap.org/img/wn/${jsonResponse.weather[0].icon}@2x.png`
   }
   return weatherData;
 }
